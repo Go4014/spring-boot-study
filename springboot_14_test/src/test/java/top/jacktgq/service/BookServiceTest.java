@@ -13,8 +13,8 @@ import top.jacktgq.pojo.Book;
  * @Description
  */
 @SpringBootTest
-@Transactional
-//@Rollback(value = false)
+@Transactional //给数据库添加回滚，使得测试对数据库的增删改不产生影响
+//@Rollback(value = false) //是否事务回滚，默认值为true
 public class BookServiceTest {
     @Autowired
     private IBookService bookService;

@@ -18,7 +18,7 @@ class H2ApplicationTests {
 
     @Test
     public void testH2Select() {
-        String sql = "select * from tbl_book";
+        String sql = "select * from tbl_books";
 
         RowMapper<Book> rm = new RowMapper<Book>() {
             @Override
@@ -37,7 +37,7 @@ class H2ApplicationTests {
 
     @Test
     public void testH2Save() {
-        String sql = "insert into tbl_book values(?, ? ,? ,?)";
-        jdbcTemplate.update(sql, 5, "啊哈算法", "计算机", "数据结构和算法");
+        String sql = "insert into tbl_books values(?, ? ,? ,?)";
+        jdbcTemplate.update(sql, 3, "啊哈算法", "计算机", "数据结构和算法");
     }
 }

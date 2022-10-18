@@ -38,11 +38,13 @@ public class WebTest {
     public void testStatus(@Autowired MockMvc mvc) throws Exception {
         MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get("/books1/6");
         ResultActions action = mvc.perform(builder);
+
         // 设定预期值，与真实值进行比较，成功测试通过，失败测试不通过
         // 定义本次调用的预期值
         StatusResultMatchers srm = MockMvcResultMatchers.status();
         // 预计本次调用成功的状态码：200
         ResultMatcher ok = srm.isOk();
+
         // 添加预计值到本次调用过程中进行匹配
         action.andExpect(ok);
     }

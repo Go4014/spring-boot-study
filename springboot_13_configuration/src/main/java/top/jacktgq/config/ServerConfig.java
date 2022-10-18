@@ -27,10 +27,12 @@ import java.time.temporal.ChronoUnit;
 @Validated
 public class ServerConfig {
     private String ipAddress;
+
     // 设置具体的规则
     @Max(value = 8888, message = "最大值不能超过8888")
     @Min(value = 1000, message = "最小值不能低于1000")
     private int port;
+
     @DurationUnit(ChronoUnit.MINUTES)
     private Duration timeout;
 

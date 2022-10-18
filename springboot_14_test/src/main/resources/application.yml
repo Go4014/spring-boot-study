@@ -6,9 +6,9 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/springboot_db?serverTimezone=UTC
+      url: jdbc:mysql://localhost:3306/db?serverTimezone=UTC
       username: root
-      password: TGQ@candywall123
+      password: czg020525
       # password: 123
   # 热部署范围配置
   devtools:
@@ -31,7 +31,7 @@ testcase:
   randomBook:
     id: ${random.int}
     id2: ${random.int(10)} # 生成10以内的整数
-    type: ${random.int(5, 10)} # 生成5-10之间的整数
+    type: ${random.int(5,10)} # 生成5-10之间的整数
     name: 糖果墙${random.value}
     uuid: ${random.uuid}
     publicTime: ${random.long}

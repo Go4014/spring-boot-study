@@ -16,7 +16,6 @@ class RedisTemplateTests {
     @Test
     public void testSet() {
         ValueOperations valueOperations = stringRedisTemplate.opsForValue();
-
         valueOperations.set("age", "41");
     }
     @Test

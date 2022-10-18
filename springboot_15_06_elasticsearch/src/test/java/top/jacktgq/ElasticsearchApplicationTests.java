@@ -14,7 +14,6 @@ import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.common.xcontent.XContentType;
-import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
@@ -26,7 +25,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import top.jacktgq.mapper.BookMapper;
 import top.jacktgq.pojo.Book;
-import top.jacktgq.utils.CandyJsonUtils;
 
 import java.io.IOException;
 import java.util.List;
@@ -96,7 +94,7 @@ class ElasticsearchApplicationTests {
     public void testCreateDoc() throws Exception {
         Book book = bookMapper.selectById(1);
 
-        IndexRequest request = new IndexRequest("books").id(book.getId() + "");
+        IndexRequest request = new IndexRequest("books") .id(book.getId() + "");
         String jsonParams = objectMapper.writeValueAsString(book);
         request.source(jsonParams, XContentType.JSON);
         client.index(request, RequestOptions.DEFAULT);

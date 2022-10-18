@@ -1,9 +1,9 @@
 spring:
   # redis配置
   redis:
-    host: 192.168.3.6
+    host: 127.0.0.1
     port: 6379
-    password: 123456
+    password: czg020525
     # client-type: jedis # 默认为lettuce
     # 还可以进一步配置
 #    jedis:

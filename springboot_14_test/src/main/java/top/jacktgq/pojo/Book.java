@@ -1,7 +1,9 @@
 package top.jacktgq.pojo;
 
 import lombok.Data;
-import org.springframework.stereotype.Component;/**
+import org.springframework.stereotype.Component;
+
+/**
  * @Author CandyWall
  * @Date 2022/1/19--22:58
  * @Description

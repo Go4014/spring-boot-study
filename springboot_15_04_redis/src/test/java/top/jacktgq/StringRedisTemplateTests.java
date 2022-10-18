@@ -13,7 +13,6 @@ class StringRedisTemplateTests {
     private RedisTemplate<String, Object> redisTemplate;
 
     @Test
-
     public void testSaveUser() {
         ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
         valueOperations.set("user:1", new User("诸葛亮", 27));

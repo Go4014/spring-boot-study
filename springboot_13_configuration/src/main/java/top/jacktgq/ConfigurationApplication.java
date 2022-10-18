@@ -24,6 +24,7 @@ public class ConfigurationApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(ConfigurationApplication.class, args);
+
         System.out.println("ctx.getBean(ServerConfig.class) = " + ctx.getBean(ServerConfig.class));
         DruidDataSource ds = ctx.getBean(DruidDataSource.class);
         // System.out.println("ds = " + ds);
